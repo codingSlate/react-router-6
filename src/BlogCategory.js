@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { AllBlogs } from './BlogFetch';
 
-const ProdCategory = () => {
-  const [products, setProducts] = useState(null);
+const BlogCategory = () => {
+  const [blogs, setBlogs] = useState(null);
   useEffect(() => {
     (async () => {
       const data = await AllBlogs();
       console.log(data.data);
-      setProducts(data.data.slice(0, 2));
+      setBlogs(data.data.slice(0, 2));
     })();
   }, []);
 
-  if (products === null) {
+  if (blogs === null) {
     return <div>Loading.......</div>;
   }
   return (
@@ -21,7 +21,7 @@ const ProdCategory = () => {
       <br />
       <article>
         <div>All Posts</div>
-        {products.map((item) => (
+        {blogs.map((item) => (
           <div key={item.id}>
             <h4>{item.title}</h4>
             <p>{item.body.substring(0, 100)}...</p>
@@ -32,4 +32,4 @@ const ProdCategory = () => {
     </div>
   );
 };
-export default ProdCategory;
+export default BlogCategory;
