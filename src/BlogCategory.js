@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { AllBlogs } from './BlogFetch';
+import { AllBlogs } from './FetchBlogs';
 
 const BlogCategory = () => {
   const [blogs, setBlogs] = useState(null);
   useEffect(() => {
     (async () => {
-      const data = await AllBlogs();
-      // console.log(data.data);
-      setBlogs(data.data.slice(0, 2));
-    })();
+      try {
+        const data = await AllBlogs();
+        // console.log(data.data);
+        setBlogs(data.data.slice(0, 2));
+      } catch (e) {
+        console.warn(e);
+      }
+    })(); // async closed
   }, []);
 
   if (blogs === null) {
