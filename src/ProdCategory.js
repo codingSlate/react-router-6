@@ -6,8 +6,8 @@ const ProdCategory = () => {
   useEffect(() => {
     (async () => {
       const data = await listProducts();
-      // console.log(data);
-      setProducts(data);
+      console.log(data.data);
+      setProducts(data.data.slice(0, 2));
     })();
   }, []);
 
@@ -16,23 +16,17 @@ const ProdCategory = () => {
   }
   return (
     <div>
-      I am list of Places
+      I am list of Catrgoty
       <br />
       <br />
       <article>
-        <div>post code : {products['post code']}</div>
-        <div>country : {products['country']}</div>
-        <div>country abbreviation: {products['country abbreviation']}</div>
-        <br />
-        <div>Places</div>
-        {products.places.map((item) => (
-          <>
-            <div>place name: {item['place name']}</div>
-            <div>longitude: {item['longitude']}</div>
-            <div>state: {item['state']}</div>
-            <div>state: {item['state abbreviation']}</div>
-            <div>latitude: {item['latitude']}</div>
-          </>
+        <div>Posts</div>
+        {products.map((item) => (
+          <div key={item.id}>
+            <h4>{item.title}</h4>
+            <div>{item.body.substring(0, 100)}...</div>
+            <hr/>
+          </div>
         ))}
       </article>
     </div>

@@ -11,6 +11,7 @@ import Home from './Home';
 import Products from './Products';
 import ProdCategory from './ProdCategory';
 import Admin from './Admin';
+import ProdPlaces from './ProdPlaces';
 import Blog from './blog/Blog';
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/products" element={<Products />}>
             <Route path="/products" element={<ProdCategory />} />
+            <Route path="/products/:id" element={<ProdPlaces />} />
           </Route>
           <Route path="/admin" element={<Admin />} />
           <Route path="/*" element={<Navigate to="/" />} />
