@@ -16,7 +16,6 @@ const SinglePost = () => {
 
   return (
     <div>
-      I am list of places
       <div>Single Post</div>
       {post === null && <p>Loading.....</p>}
       {post != null && (
