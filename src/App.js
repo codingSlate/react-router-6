@@ -12,7 +12,6 @@ import BlogPage from './BlogPage';
 import BlogCategory from './BlogCategory';
 import Admin from './Admin';
 import SinglePost from './SinglePost';
-import BlogPage from './BlogPage';
 
 export default function App() {
   return (
