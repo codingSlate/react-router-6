@@ -1,4 +1,4 @@
-export const listProducts = async () => {
+export const AllBlogs = async () => {
   // const response = await fetch('https://api.zippopotam.us/us/33162');
   const response = await fetch('https://gorest.co.in/public/v1/posts');
   if (response.ok) {
@@ -7,7 +7,7 @@ export const listProducts = async () => {
   throw new Error('Something went wrong!!');
 };
 
-export const rettrieveProduct = async (id) => {
+export const rettrieveBlog = async (id) => {
   // const response = await fetch(`https://api.publicapis.org/entries/${id}`);
   const response = await fetch(`https://gorest.co.in/public/v1/posts/${id}`);
   if (response.ok) {

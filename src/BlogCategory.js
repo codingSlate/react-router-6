@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { listProducts } from './ProductService';
+import { AllBlogs } from './BlogFetch';
 
 const ProdCategory = () => {
   const [products, setProducts] = useState(null);
   useEffect(() => {
     (async () => {
-      const data = await listProducts();
+      const data = await AllBlogs();
       console.log(data.data);
       setProducts(data.data.slice(0, 2));
     })();
@@ -16,16 +16,16 @@ const ProdCategory = () => {
   }
   return (
     <div>
-      I am list of Catrgoty
+      I am list of Blog Catrgory
       <br />
       <br />
       <article>
-        <div>Posts</div>
+        <div>All Posts</div>
         {products.map((item) => (
           <div key={item.id}>
             <h4>{item.title}</h4>
-            <div>{item.body.substring(0, 100)}...</div>
-            <hr/>
+            <p>{item.body.substring(0, 100)}...</p>
+            <hr />
           </div>
         ))}
       </article>

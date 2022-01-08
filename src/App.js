@@ -8,10 +8,10 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Home from './Home';
-import Products from './Products';
-import ProdCategory from './ProdCategory';
+import Blog from './Blog';
+import BlogCategory from './BlogCategory';
 import Admin from './Admin';
-import ProdPlaces from './ProdPlaces';
+import SinglePostPage from './SinglePostPage';
 import Blog from './blog/Blog';
 
 export default function App() {
@@ -20,21 +20,16 @@ export default function App() {
       <BrowserRouter>
         <h1>React Router 6</h1>
         <nav>
-          <NavLink to="/" end>
-            Home
-          </NavLink>
-          <NavLink to="/blog">Blog</NavLink>
-          <NavLink to="/blog/:first">FirstBlog</NavLink>
-          <NavLink to="/products">Products</NavLink>
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/post">Blog</NavLink>
           <NavLink to="/admin">Admin</NavLink>
         </nav>
         <br></br>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/products" element={<Products />}>
-            <Route path="/products" element={<ProdCategory />} />
-            <Route path="/products/:id" element={<ProdPlaces />} />
+          <Route path="/post" element={<Blog />}>
+            <Route path="/post" element={<BlogCategory />} />
+            <Route path="/post/:id" element={<SinglePostPage />} />
           </Route>
           <Route path="/admin" element={<Admin />} />
           <Route path="/*" element={<Navigate to="/" />} />
