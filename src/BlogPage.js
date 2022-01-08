@@ -1,11 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
 
-const Blog = () =>{
+const BlogPage = () =>{
     return(
     <div>I am Blog Page
       <Outlet />
     </div>
     )
 }
-export default Blog
+export default BlogPage

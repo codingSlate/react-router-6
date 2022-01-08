@@ -12,7 +12,7 @@ import Blog from './Blog';
 import BlogCategory from './BlogCategory';
 import Admin from './Admin';
 import SinglePostPage from './SinglePostPage';
-import Blog from './blog/Blog';
+import BlogPage from './blog/BlogPage';
 
 export default function App() {
   return (
@@ -20,16 +20,18 @@ export default function App() {
       <BrowserRouter>
         <h1>React Router 6</h1>
         <nav>
-          <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/post">Blog</NavLink>
+          <NavLink to="/" end>
+            Home
+          </NavLink>
+          <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/admin">Admin</NavLink>
         </nav>
         <br></br>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/post" element={<Blog />}>
-            <Route path="/post" element={<BlogCategory />} />
-            <Route path="/post/:id" element={<SinglePostPage />} />
+          <Route path="/blog" element={<BlogPage />}>
+            <Route path="/blog" element={<BlogCategory />} />
+            <Route path="/blog/:id" element={<SinglePostPage />} />
           </Route>
           <Route path="/admin" element={<Admin />} />
           <Route path="/*" element={<Navigate to="/" />} />
