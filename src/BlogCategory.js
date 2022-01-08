@@ -6,7 +6,7 @@ const BlogCategory = () => {
   useEffect(() => {
     (async () => {
       const data = await AllBlogs();
-      console.log(data.data);
+      // console.log(data.data);
       setBlogs(data.data.slice(0, 2));
     })();
   }, []);

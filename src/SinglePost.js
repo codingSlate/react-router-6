@@ -6,11 +6,10 @@ const SinglePost = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
 
-  console.log(post);
+  // console.log(post);
   useEffect(() => {
     (async () => {
       const getpost = await rettrieveBlog(id);
-      // console.log(getpost);
       setPost(getpost.data);
     })();
   }, [id]);
@@ -23,7 +22,7 @@ const SinglePost = () => {
       {post != null && (
         <>
           <h4>{post.title}</h4>
-          <p>{post.body}</p>
+          <p>{post.body.slice(0,150)}...</p>
         </>
       )}
     </div>
