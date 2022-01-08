@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { rettrieveBlog } from './BlogFetch';
 
-const SinglePostPage = () => {
+const SinglePost = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
 
@@ -29,4 +29,4 @@ const SinglePostPage = () => {
     </div>
   );
 };
-export default SinglePostPage;
+export default SinglePost;

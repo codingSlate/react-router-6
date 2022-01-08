@@ -8,10 +8,10 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Home from './Home';
-import Blog from './Blog';
+import BlogPage from './BlogPage';
 import BlogCategory from './BlogCategory';
 import Admin from './Admin';
-import SinglePostPage from './SinglePostPage';
+import SinglePost from './SinglePost';
 import BlogPage from './blog/BlogPage';
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/blog" element={<BlogPage />}>
             <Route path="/blog" element={<BlogCategory />} />
-            <Route path="/blog/:id" element={<SinglePostPage />} />
+            <Route path="/blog/:id" element={<SinglePost />} />
           </Route>
           <Route path="/admin" element={<Admin />} />
           <Route path="/*" element={<Navigate to="/" />} />
