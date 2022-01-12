@@ -4,3 +4,7 @@ h1, p {
 nav a{
   margin: 5px;
 }
+
+.active{
+  background-color: rgb(189, 211, 252);
+}
